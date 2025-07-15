@@ -1,4 +1,5 @@
 # import libraries
+import sys
 import pygame
 # import modules
 from constants import *
@@ -36,6 +37,10 @@ def main():
 
         # run update method on all in updatable group
         updatable.update(dt)
+        for a in asteroids:
+            if a.collision_detection(player):
+                print("Game Over!")
+                sys.exit()
 
         # redraw graphics
         screen.fill("black")
