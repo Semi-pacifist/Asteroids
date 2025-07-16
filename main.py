@@ -45,6 +45,11 @@ def main():
                 print("Game Over!")
                 sys.exit()
 
+            for s in shots:
+                if s.collision_detection(a):
+                    a.split()
+                    s.kill()
+
         # redraw graphics
         screen.fill("black")
         for thing in drawable:
@@ -57,3 +62,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+a.split()
